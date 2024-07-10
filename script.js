@@ -13,4 +13,26 @@ function getEscolhaComputador(){
     return opcaoEscolhida
 }
 
-console.log(getEscolhaComputador())
+//funcao que escolhe aleatoriamente a decisao do humano para as opcoes do jogo pedra, papel e tesoura.
+function getEscolhaHumano(){
+    
+    //input do player humano
+    let escolha = prompt("Voce escolhe Pedra, Papel ou Tesoura?");
+
+    //verifica se o input esta de acordo com uma das opcoes validas. Caso nao seja, avisa o jogador e reinica a solicitacao de input.
+    if (escolha.toLowerCase() === "pedra"){
+        return "Pedra"
+    }
+    else if (escolha.toLowerCase() === "papel") {
+        return "Papel"
+    }
+    else if (escolha.toLowerCase() === "tesoura") {
+        return "Tesoura"
+    } else {
+        console.log("Opcao invalida. Tente de novo!")
+        console.log(getEscolhaHumano())
+    }
+
+        
+}
+console.log(getEscolhaHumano())
